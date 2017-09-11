@@ -1,0 +1,17 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	prc = push origin HEAD:refs/for/master
+    pb = pull --rebase
+    cp = cherry-pick
+    pa = pull --rebase apollo master
+    pd = pull --rebase apollo_dev master
+[user]
+	name = Lei Wang
+	email = wanglei63@baidu.com
+[push]
+	default = current
+[core]
+	editor = vim
