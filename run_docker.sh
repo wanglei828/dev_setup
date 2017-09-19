@@ -1,17 +1,12 @@
 #! /bin/bash
 
 function init() {
-    if [ -z "${DOCKER_REPO}" ]; then
-        DOCKER_REPO=apolloauto/internal
-    fi
-
     if [[ $# != 1 ]];then
         echo "Usage: run_docker.sh image_name"
         exit 1
     fi
 
-    VERSION=$1
-    IMG=${DOCKER_REPO}:$VERSION
+    IMG=$1
     LOCAL_DIR=$HOME
 
     docker ps -a --format "{{.Names}}" | grep 'tmp_container' 1>/dev/null
