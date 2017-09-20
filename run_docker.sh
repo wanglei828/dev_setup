@@ -33,7 +33,8 @@ function main() {
         -v $LOCAL_DIR:/mnt \
         --net host \
         -w /mnt \
-        $IMG
+        $IMG \
+        /bin/bash
 }
 
 main $@
