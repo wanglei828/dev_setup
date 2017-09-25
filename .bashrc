@@ -94,12 +94,12 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias ap='cd ~/github/apollo'
-alias bstart='~/github/apollo/docker/scripts/dev_start.sh'
-alias bgpu='~/github/apollo/docker/scripts/dev_start_gpu.sh'
-alias binto='~/github/apollo/docker/scripts/dev_into.sh'
+alias ai='cd ~/icode/baidu/adu-lab/apollo-internal'
+alias bstart='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/dev_start.sh'
+alias binto='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/dev_into.sh'
 alias bstop='docker stop apollo_dev'
-alias rstart='~/github/apollo/docker/scripts/release_start.sh'
-alias rinto='~/github/apollo/docker/scripts/release_into.sh'
+alias rstart='~/icode/baidu/adu-lab/apollo-internal/scripts/release_start.sh'
+alias rinto='~/icode/baidu/adu-lab/apollo-internal/scripts/release_into.sh'
 alias rstop='docker stop apollo_release'
 alias dclean='docker rm -f $(docker ps -aq)'
 alias iclean='docker rmi -f $(docker images -aq)'
@@ -135,4 +135,4 @@ if ! shopt -oq posix; then
 fi
 
 #setup PATH
-export PATH=/home/wanglei/icode/baidu/personal-code/scripts:$PATH
+export PATH=~/icode/baidu/personal-code/scripts:$PATH
