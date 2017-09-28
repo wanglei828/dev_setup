@@ -109,6 +109,7 @@ alias dps='docker ps'
 alias ds='docker stop'
 alias di='docker images'
 alias drmi='docker rmi -f'
+alias sbrc='source ~/.bashrc'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
