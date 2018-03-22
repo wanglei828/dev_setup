@@ -95,11 +95,13 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ap='cd ~/github/apollo'
 alias ai='cd ~/icode/baidu/adu-lab/apollo-internal'
+alias ota='cd ~/icode/baidu/adu-lab/apollo-ota'
 alias bstart='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/dev_start.sh'
+alias bi='~/github/apollo/docker/scripts/dev_start.sh'
 alias binto='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/dev_into.sh'
 alias bstop='docker stop apollo_dev'
-alias rstart='~/icode/baidu/adu-lab/apollo-internal/scripts/release_start.sh'
-alias rinto='~/icode/baidu/adu-lab/apollo-internal/scripts/release_into.sh'
+alias rstart='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/release_start.sh'
+alias rinto='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/release_into.sh'
 alias rstop='docker stop apollo_release'
 alias dclean='docker rm -f $(docker ps -aq)'
 alias iclean='docker rmi -f $(docker images -aq)'
@@ -107,10 +109,13 @@ alias dcreate='~/github/apollo/docker/scripts/dev_create.sh'
 alias rcreate='~/github/apollo/docker/scripts/run_env_create.sh'
 alias dps='docker ps'
 alias ds='docker stop'
-alias di='docker images'
+alias dtag='docker images --format "{{.Repository}}:{{.Tag}}"'
+alias di='docker images' 
 alias drmi='docker rmi -f'
 alias sbrc='source ~/.bashrc'
 alias vibrc='vi ~/.bashrc'
+alias sota='ssh root@180.76.145.202'
+alias sre='ssh apollo@172.19.57.23'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -138,3 +143,4 @@ fi
 
 #setup PATH
 export PATH=~/icode/baidu/personal-code/scripts:$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/caros/secure_upgrade/depend_lib
