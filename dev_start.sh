@@ -77,7 +77,7 @@ function main(){
         mkdir "$HOME/.ssh"
     fi
 
-    docker run -it \
+    nvidia-docker run -it \
         -d \
         --privileged \
         --name $CONTAINER_ID \
