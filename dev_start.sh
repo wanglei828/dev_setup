@@ -3,6 +3,7 @@
 DOCKER_REPO="paddlepaddle/paddle"
 VERSION="lei_dev"
 CONTAINER_ID="lei_dev"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function print_usage() {
   echo "
@@ -10,9 +11,11 @@ function print_usage() {
 
     Options are:
       -r <repo>         Docker repo name, sush as "paddlepaddle/paddle".
-      -v <version>      Image version, such as '20180122'. Default is 'latest'.
+      -v <version>      Image version, such as 'lei_dev'. Default is 'latest'.
+      -t <build_type>   Container environment setting, such as "CI".
+      -h                Print help message.
     For example:
-      $0 -r paddlepaddle/paddle -v 20180122
+      $0 -r paddlepaddle/paddle -v lei_dev -t CI 
   "
 }
 
@@ -25,6 +28,10 @@ do
     ;;
   -v)
     VERSION=$2
+    shift
+    ;;
+  -t)
+    TYPE=$2
     shift
     ;;
   -h)
@@ -60,8 +67,6 @@ function main(){
         display="${DISPLAY}"
     fi
 
-    local devices=" -v /dev:/dev"
-
     USER_ID=$(id -u)
     GRP=$(id -g -n)
     GRP_ID=$(id -g)
@@ -77,6 +82,31 @@ function main(){
         mkdir "$HOME/.ssh"
     fi
 
+    case "${TYPE}" in
+      "CI")
+        DOCKER_ENV=$(cat <<EOL
+            -e FLAGS_fraction_of_gpu_memory_to_use=0.15 \
+            -e CTEST_OUTPUT_ON_FAILURE=1 \
+            -e CTEST_PARALLEL_LEVEL=5 \
+            -e WITH_GPU=ON \
+            -e WITH_TESTING=ON \
+            -e WITH_C_API=OFF \
+            -e WITH_COVERAGE=ON \
+            -e COVERALLS_UPLOAD=ON \
+            -e WITH_DEB=OFF \
+            -e CMAKE_BUILD_TYPE=RelWithDebInfo \
+            -e PADDLE_FRACTION_GPU_MEMORY_TO_USE=0.15 \
+            -e CUDA_VISIBLE_DEVICES=0,1 \
+            -e WITH_DISTRIBUTE=ON \
+            -e RUN_TEST=ON
+EOL
+         )
+         ;;
+      *)
+       ;;
+      esac
+        
+    set -x
     nvidia-docker run -it \
         -d \
         --privileged \
@@ -89,20 +119,20 @@ function main(){
         -e DOCKER_GRP_ID=$GRP_ID \
         -e DOCKER_IMG=$IMG \
         -e HOME=$HOME \
+        ${DOCKER_ENV} \
         -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
-        -v $PWD:/paddle \
-        -v /media:/media \
         -v $HOME/.cache:${DOCKER_HOME}/.cache \
         -v $HOME/.ssh:${DOCKER_HOME}/.ssh \
-        -v $HOME/github/dev_setup:/dev_setup \
         -v /etc/localtime:/etc/localtime:ro \
-        --net host \
+        -v /media:/media \
+        -v /dev:/dev \
+        -v $PWD:/paddle \
+        -v $DIR:/dev_setup \
         -w /paddle \
-        ${devices} \
+        --net host \
         --add-host in_dev_docker:127.0.0.1 \
         --add-host ${LOCAL_HOST}:127.0.0.1 \
         --hostname in_dev_docker \
-        --shm-size 2G \
         $IMG \
         /bin/bash
     set +x

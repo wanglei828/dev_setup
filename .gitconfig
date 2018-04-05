@@ -7,10 +7,10 @@
     pb = pull --rebase
     cp = cherry-pick
     pa = pull --rebase apollo master
-    pd = pull --rebase apollo_dev master
+    pp = pull --rebase paddle develop
 [user]
 	name = Lei Wang
-	email = wanglei63@baidu.com
+	email = bestwanglei@gmail.com
 [push]
 	default = current
 [core]
