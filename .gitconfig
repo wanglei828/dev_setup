@@ -6,7 +6,8 @@
 	prc = push origin HEAD:refs/for/master
     pb = pull --rebase
     cp = cherry-pick
-    pa = pull --rebase apollo master
+    pa = pull --rebase ap2 master
+    pi = pull --rebase api master
 [user]
 	name = Lei Wang
 	email = bestwanglei@gmail.com
@@ -14,3 +15,8 @@
 	default = current
 [core]
 	editor = vim
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
