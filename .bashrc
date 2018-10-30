@@ -96,15 +96,16 @@ alias l='ls -CF'
 
 # change path
 alias ap='cd ~/github/apollo'
-alias ai='cd ~/icode/baidu/adu-lab/apollo-internal'
+alias ap2='cd ~/github/apollo2'
+alias ai='cd ~/github/apollo-internal'
 alias as='cd ~/github/apollo-simulator'
 alias eng='cd ~/github/replay-engine'
 
 # docker cmd
-alias bstart='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/dev_start.sh'
-alias binto='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/dev_into.sh'
-alias rstart='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/release_start.sh'
-alias rinto='~/icode/baidu/adu-lab/apollo-internal/docker/scripts/release_into.sh'
+alias bstart='~/github/apollo-internal/docker/scripts/dev_start.sh'
+alias binto='~/github/apollo-internal/docker/scripts/dev_into.sh'
+alias rstart='~/github/apollo-internal/docker/scripts/release_start.sh'
+alias rinto='~/github/apollo-internal/docker/scripts/release_into.sh'
 alias dclean='docker rm -f $(docker ps -aq)'
 alias iclean='docker rmi -f $(docker images -aq)'
 alias dps='docker ps'
@@ -115,6 +116,12 @@ alias drmi='docker rmi -f'
 # source cmd
 alias sbrc='source ~/.bashrc'
 alias vibrc='vi ~/.bashrc'
+
+# azure
+alias az_list='az aks list --output table'
+alias az_east='az aks get-credentials -g apollo-dreamland-prod-eastus -n apollo-dreamland-prod-eastus'
+alias az_center='az aks get-credentials -g apollo-dreamland-prod-centralus -n apollo-dreamland-prod-centralus'
+alias az_staging='az aks get-credentials -g test -n apollo-dreamland-test-aks'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -139,5 +146,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# kubectl autocomplete
+source <(kubectl completion bash)
 
 #setup PATH
