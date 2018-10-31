@@ -20,7 +20,7 @@ function main() {
   else
     cp $BASE_DIR/bash/.bashrc ~/
   fi
-  cp $BASE_DIR/bash/.bashrc_aliases ~/
+  cp $BASE_DIR/bash/.bash_aliases ~/
   cp $BASE_DIR/bash/.vimrc ~/
   cp $BASE_DIR/git/.gitconfig ~/
 }
