@@ -21,6 +21,7 @@ alias ap2='cd ~/github/apollo2'
 alias ai='cd ~/github/apollo-internal'
 alias as='cd ~/github/apollo-simulator'
 alias eng='cd ~/github/replay-engine'
+alias dset='cd ~/github/dev_setup'
 
 # docker cmd
 alias bstart='~/github/apollo-internal/docker/scripts/dev_start.sh'
