@@ -1,0 +1,29 @@
+
+# get current git branch name
+parse_git_branch() {
+     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# prompt
+export PS1="\u@\h:\W\$(parse_git_branch)$ "
+
+# PATH
+export PATH=/Applications/CMake.app/Contents/bin:~/scripts:$PATH
+
+# alias
+alias ls='ls -G'
+alias ll='ls -alF'
+
+# ssh
+alias scar='ssh apollo@192.168.10.6'
+alias sdev='ssh wanglei@172.19.61.250'
+alias slei='ssh leiwang@172.19.40.63'
+alias sre'ssh wanglei63@relay01.baidu.com'
+
+# source
+alias sbrc='source ~/.bashrc'
+alias vibrc='vi ~/.bashrc'
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
