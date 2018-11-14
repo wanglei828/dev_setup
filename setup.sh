@@ -23,6 +23,7 @@ function main() {
   cp $BASE_DIR/bash/.bash_aliases ~/
   cp $BASE_DIR/bash/.vimrc ~/
   cp $BASE_DIR/git/.gitconfig ~/
+  source ~/.bashrc
 }
 
 main
