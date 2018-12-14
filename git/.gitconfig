@@ -6,7 +6,7 @@
 	prc = push origin HEAD:refs/for/master
     pb = pull --rebase
     cp = cherry-pick
-    pa = pull --rebase ap2 master
+    pa = pull --rebase ap master
     pi = pull --rebase api master
 [user]
 	name = Lei Wang
