@@ -41,9 +41,8 @@ alias vibrc='vi ~/.bashrc'
 
 # azure
 alias az_list='az aks list --output table'
-alias az_east='az aks get-credentials -g apollo-dreamland-prod-eastus -n apollo-dreamland-prod-eastus'
-alias az_center='az aks get-credentials -g apollo-dreamland-prod-centralus -n apollo-dreamland-prod-centralus'
-alias az_staging='az aks get-credentials -g test -n apollo-dreamland-test-aks'
+alias az_east='az aks get-credentials -g prod -n apollo-dl-prod-eastus'
+alias az_staging='az aks get-credentials -g test -n apollo-dl-staging-centralus'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
