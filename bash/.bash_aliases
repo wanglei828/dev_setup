@@ -28,8 +28,8 @@ alias bstart='~/github/apollo-internal/docker/scripts/dev_start.sh'
 alias binto='~/github/apollo-internal/docker/scripts/dev_into.sh'
 alias rstart='~/github/apollo-internal/docker/scripts/release_start.sh'
 alias rinto='~/github/apollo-internal/docker/scripts/release_into.sh'
-alias dclean='docker rm -f $(docker ps -aq)'
-alias iclean='docker rmi -f $(docker images -aq)'
+alias dclean='docker ps -aq -f "status=exited" | xargs docker rm'
+alias iclean='docker images -aq -f "dangling=true" | xargs docker rmi'
 alias dps='docker ps'
 alias dtag='docker images --format "{{.Repository}}:{{.Tag}}"'
 alias di='docker images' 
@@ -51,9 +51,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # ssh
 alias scar='ssh apollo@192.168.10.6'
 alias sdev='ssh wanglei@172.19.61.250'
+alias sidg='ssh idgsim@172.19.61.250'
 alias slei='ssh leiwang@172.19.40.63'
 alias sre='ssh wanglei63@relay01.baidu.com'
 alias svm='ssh apollo@52.224.64.156'
+alias sbce='ssh root@180.76.233.27'
+
 
 # sftp
 alias flei='sftp leiwang@172.19.40.63'
