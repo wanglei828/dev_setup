@@ -24,6 +24,8 @@ function main() {
   cp $BASE_DIR/bash/.bash_aliases ~/
   cp $BASE_DIR/bash/.vimrc ~/
   cp $BASE_DIR/git/.gitconfig ~/
+  mkdir ~/.kube
+  cp $BASE_DIR/k8s/* ~/.kube
   source ~/.bashrc
 }
 

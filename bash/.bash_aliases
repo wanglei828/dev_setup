@@ -39,10 +39,13 @@ alias drmi='docker rmi -f'
 alias sbrc='source ~/.bashrc'
 alias vibrc='vi ~/.bashrc'
 
-# azure
+# k8s
 alias az_list='az aks list --output table'
 alias az_east='az aks get-credentials -g prod -n apollo-dl-prod-eastus'
 alias az_staging='az aks get-credentials -g test -n apollo-dl-staging-centralus'
+alias 2staging='cp ~/.kube/az_staging.conf ~/.kube/config'
+alias 2prod='cp ~/.kube/az_prod.conf ~/.kube/config'
+alias 2bce='cp ~/.kube/bce.conf ~/.kube/config'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -55,8 +58,12 @@ alias sidg='ssh idgsim@172.19.61.250'
 alias slei='ssh leiwang@172.19.40.63'
 alias sre='ssh wanglei63@relay01.baidu.com'
 alias svm='ssh apollo@52.224.64.156'
-alias sbce='ssh root@180.76.233.27'
+alias sbce='ssh root@106.12.159.144'
 
 
 # sftp
 alias flei='sftp leiwang@172.19.40.63'
+
+#
+alias mgrep='grep -R --exclude-dir={node_modules,bazel-bin,bazel-genfiles,bazel-out,gazel-testlogs,bazel-apollo}'
+alias mfind='find . -path "*node_modules*" -prune -o -name'
