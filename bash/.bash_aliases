@@ -17,7 +17,6 @@ alias l='ls -CF'
 
 # change path
 alias ap='cd ~/github/apollo'
-alias ap2='cd ~/github/apollo2'
 alias ai='cd ~/github/apollo-internal'
 alias as='cd ~/github/apollo-simulator'
 alias eng='cd ~/github/replay-engine'
@@ -58,7 +57,7 @@ alias sidg='ssh idgsim@172.19.61.250'
 alias slei='ssh leiwang@172.19.40.63'
 alias sre='ssh wanglei63@relay01.baidu.com'
 alias svm='ssh apollo@52.224.64.156'
-alias sbce='ssh root@106.12.159.144'
+alias sbce='ssh wanglei@180.76.109.108'
 
 
 # sftp
