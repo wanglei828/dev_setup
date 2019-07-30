@@ -14,6 +14,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias valias='vi ~/.bash_aliases'
 
 # change path
 alias ap='cd ~/github/apollo'
@@ -27,8 +28,8 @@ alias bstart='~/github/apollo-internal/docker/scripts/dev_start.sh'
 alias binto='~/github/apollo-internal/docker/scripts/dev_into.sh'
 alias rstart='~/github/apollo-internal/docker/scripts/release_start.sh'
 alias rinto='~/github/apollo-internal/docker/scripts/release_into.sh'
-alias dclean='docker ps -aq -f "status=exited" | xargs docker rm'
-alias iclean='docker images -aq -f "dangling=true" | xargs docker rmi'
+alias dclean='docker ps -aq -f "status=exited" | xargs --no-run-if-empty docker rm -v -f'
+alias iclean='docker images -aq -f "dangling=true" | xargs --no-run-if-empty docker rmi'
 alias dps='docker ps'
 alias dtag='docker images --format "{{.Repository}}:{{.Tag}}"'
 alias di='docker images' 
@@ -51,7 +52,6 @@ alias 2bce='cp ~/.kube/bce.conf ~/.kube/config'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # ssh
-alias scar='ssh apollo@192.168.10.6'
 alias sdev='ssh wanglei@172.19.61.250'
 alias sidg='ssh idgsim@172.19.61.250'
 alias slei='ssh leiwang@172.19.40.63'
