@@ -38,6 +38,7 @@ alias drmi='docker rmi -f'
 # source cmd
 alias sbrc='source ~/.bashrc'
 alias vibrc='vi ~/.bashrc'
+alias valias='vi ~/.bash_aliases'
 
 # k8s
 alias az_list='az aks list --output table'
