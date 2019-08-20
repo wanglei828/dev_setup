@@ -67,3 +67,6 @@ alias flei='sftp leiwang@172.19.40.63'
 #
 alias mgrep='grep -R --exclude-dir={node_modules,bazel-bin,bazel-genfiles,bazel-out,gazel-testlogs,bazel-apollo}'
 alias mfind='find . -path "*node_modules*" -prune -o -name'
+
+# git
+alias gclone='git clone -b master --single-branch'
