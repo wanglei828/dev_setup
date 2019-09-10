@@ -47,6 +47,10 @@ alias az_staging='az aks get-credentials -g test -n apollo-dl-staging-centralus'
 alias 2staging='cp ~/.kube/az_staging.conf ~/.kube/config'
 alias 2prod='cp ~/.kube/az_prod.conf ~/.kube/config'
 alias 2bce='cp ~/.kube/bce.conf ~/.kube/config'
+alias kpod='kubectl get pod'
+alias knode='kubectl get node'
+alias klog='kubectl logs'
+alias kns='kubectl get ns'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
