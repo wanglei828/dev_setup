@@ -99,3 +99,7 @@ fi
 
 # kubectl autocomplete
 source <(kubectl completion bash)
+setns() {
+    current_context=$(kubectl config current-context)
+    kubectl config set-context ${current_context} --namespace=$1
+}
