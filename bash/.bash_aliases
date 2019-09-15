@@ -49,6 +49,7 @@ alias kpod='kubectl get pod'
 alias knode='kubectl get node'
 alias klog='kubectl logs'
 alias kns='kubectl get ns'
+alias kcur='kubectl config current-context'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
