@@ -8,6 +8,7 @@
     cp = cherry-pick
     pa = pull --rebase ap master
     pi = pull --rebase api master
+    logs = log --pretty=oneline --abbrev-commit
 [user]
 	name = Lei Wang
 	email = bestwanglei@gmail.com
