@@ -50,6 +50,7 @@ alias knode='kubectl get node'
 alias klog='kubectl logs'
 alias kns='kubectl get ns'
 alias kcur='kubectl config current-context'
+alias kspa='kubectl config view --minify | grep namespace'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
