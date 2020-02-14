@@ -6,8 +6,7 @@
 	prc = push origin HEAD:refs/for/master
     pb = pull --rebase
     cp = cherry-pick
-    pa = pull --rebase ap master
-    pi = pull --rebase api master
+    po = pull --rebase origin master
     logs = log --pretty=oneline --abbrev-commit
 [user]
 	name = Lei Wang
@@ -16,8 +15,8 @@
 	default = current
 [core]
 	editor = vim
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+[color]
+    ui = auto
+    status = auto
+    branch = auto
+
