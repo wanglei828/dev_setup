@@ -14,6 +14,7 @@ set tabstop=4 "tabs = 4 spaces
 set shiftwidth=4 "auto indent = 4 spaces
 set expandtab "expand tabs to spaces
 set tw=78 "max cols is 78
+syntax on
 
 " highlight extrawhite space with light blue background
 highlight ExtraWhitespace ctermbg=lightblue guibg=lightblue
