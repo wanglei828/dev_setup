@@ -1,22 +1,26 @@
 [alias]
-	co = checkout
-	br = branch
-	ci = commit
-	st = status
-	prc = push origin HEAD:refs/for/master
+    co = checkout
+    br = branch
+    ci = commit
+    ca = commit -a --amend --no-edit
+    st = status
     pb = pull --rebase
     cp = cherry-pick
     po = pull --rebase origin master
     logs = log --pretty=oneline --abbrev-commit
 [user]
-	name = Lei Wang
-	email = bestwanglei@gmail.com
+    name = Lei Wang
+    email = bestwanglei@gmail.com
 [push]
-	default = current
+    default = current
 [core]
-	editor = vim
+    editor = vim
 [color]
     ui = auto
     status = auto
     branch = auto
-
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

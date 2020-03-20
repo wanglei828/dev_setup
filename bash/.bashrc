@@ -96,12 +96,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-# kubectl autocomplete
-source <(kubectl completion bash)
-
-# set k8s default namespace
-setns() {
-    current_context=$(kubectl config current-context)
-    kubectl config set-context ${current_context} --namespace=$1
-}
