@@ -11,6 +11,7 @@ else
 fi
 
 # some more ls aliases
+alias vi='vim'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -51,3 +52,12 @@ alias gw='grep -r -w'
 # git
 alias gclone='git clone -b master --single-branch'
 alias gitc='vi ~/.gitconfig'
+
+# gcc
+alias od='aarch64-linux-gnu-objdump -d'
+
+# print path
+alias home='echo $HOME'
+
+# python
+alias python='/tools/python/2.7.15/bin/python2.7'

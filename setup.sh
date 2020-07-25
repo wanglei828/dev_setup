@@ -8,7 +8,7 @@ function print_usage() {
   echo 'Usage:
   ./setup.sh [OPTION]'
   echo 'Options:
-  bash: 
+  bash:
   '
 }
 

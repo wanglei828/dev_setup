@@ -96,3 +96,11 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# setup PATH
+export PATH=$PATH:~/download/gcc-arm-8.3-2019.03-x86_64-aarch64-linux-gnu/bin:~/.local/bin
+
+# setup LSF
+source /tools/IBM/LSF_MOC/10.1/conf/profile.lsf
+
+unset PYTHONPATH
