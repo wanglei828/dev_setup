@@ -9,7 +9,8 @@
     pm = pull --rebase origin master
     pd = pull --rebase origin dev
     cp = cherry-pick
-    logs = log --pretty=oneline --abbrev-commit
+    po = pull --rebase origin master
+    logs = log --pretty='format:%h %an %s'
 [user]
     name = Lei Wang
     email = bestwanglei@gmail.com
